@@ -354,7 +354,7 @@ export function AdminShell({ children }: AdminShellProps) {
                   placeholder="Buscar productos, pedidos, clientes..."
                   className="w-full bg-transparent text-sm font-medium text-slate-700 outline-none placeholder:text-slate-400"
                 />
-                <span className="rounded-lg bg-white px-2 py-1 text-xs font-bold text-slate-400">
+                <span className="rounded-lg bg-white px-2 py-1 text-xs font-bold text-slate-400 w-18">
                   Ctrl K
                 </span>
               </div>
