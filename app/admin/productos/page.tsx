@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { apiFetch } from '@/lib/api';
 import { Product } from '@/types/product';
-
+import Image from 'next/image';
 function formatCurrency(value: string | number | null) {
   if (value === null) {
     return '—';
@@ -185,8 +185,20 @@ export default async function AdminProductsPage() {
                     className="grid gap-4 px-5 py-5 xl:grid-cols-[1.4fr_1fr_0.8fr_0.8fr_0.8fr_0.5fr] xl:items-center"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                        <Package size={24} />
+                      <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                        {product.imageUrl ? (
+                          <Image
+                            src={product.imageUrl}
+                            alt={product.name}
+                            fill
+                            sizes="64px"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center bg-blue-50 text-blue-700">
+                            <Package size={26} />
+                          </div>
+                        )}
                       </div>
 
                       <div>
