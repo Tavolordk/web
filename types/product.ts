@@ -67,3 +67,17 @@ export type InventoryItem = {
   updatedAt: string | null;
   product: InventoryProduct;
 };
+
+export type ProductBatch = {
+  id: string;
+  productId: string;
+  batchCode: string | null;
+  quantity: number;
+  expirationDate: string | null;
+  purchasePrice: string | number | null;
+  salePrice: string | number | null;
+  supplierName: string | null;
+  createdAt: string;
+  updatedAt: string | null;
+  product: InventoryProduct;
+};
